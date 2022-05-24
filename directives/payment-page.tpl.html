@@ -1,0 +1,69 @@
+<div class="page">
+
+  <div class="account-data-container">
+      <h4>BETALEN</h4>
+
+      
+      <div class="account-data">
+        <div class="account-data-left">
+            <span class="title">Basisrekening</span>
+            <span class="content">{{userAccount.accountNumber}}</span>
+        </div>
+        <div class="account-data-right">
+            <span class="balance">{{userAccount.balance | currency:"€"}}</span>
+        </div>
+    </div>
+
+  </div>
+  
+  <div class="user-data-container">
+  
+      <h4>BETAALOPDRACHT</h4>
+
+      <form name="paymentForm" ng-submit="doStuff(payment);">
+      
+        <div class="form-row">
+          <label for="Bedrag">Bedrag</label>
+          <input type="number" id="Bedrag" name="Bedrag" ng-model="payment.amount" min="0" required>
+        </div>   
+
+        <div class="form-row">
+          <label for="Spoed">Spoed</label>
+          <input type="text" id="Spoed" name="Spoed" ng-model="payment.urgent" >
+        </div>
+
+        <div class="form-row">
+          <label for="From">van rekening</label>
+          <input id="From" list="accountnumber" name="From" ng-model="payment.from" required>
+          <!--this dropdown method does not seem to work in Firefox :(-->
+          <datalist id="accountnumber">
+            <option value={{userAccount.accountNumber}}></option>
+          </datalist>
+
+        </div>
+
+        <div class="form-row">
+          <label for="Date">Uitvoerdatum</label>
+          <input type="text" id="Date" name="Date" ng-model="payment.date" >
+        </div>
+
+        <div class="form-row">
+          <label for="To">Naar rek nr:</label>
+          <input id="To" list="accountnumber" name="To" ng-model="payment.to" required>
+
+          <!--This dropdown does not work very well, the user is allowed to choose his own account and after choosing you can only change it manually. Still better than only manual tho...-->
+          <datalist id="accountnumber">
+            <option ng-repeat="account in allAccounts" value={{account.accountNumber}}></option>
+          </datalist>
+        </div>
+
+        <div class="form-row">
+          <label for="AccountBy">ten name van</label>
+          <input type="text" id="AccountBy" name="AccountBy" ng-model="payment.accountBy" >
+        </div>
+  
+        <input type="submit" value="Verstuur" class="submit-button" ng-disabled="paymentForm.$invalid">
+      </form>
+      
+  </div>
+</div>

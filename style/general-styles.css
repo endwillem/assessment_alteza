@@ -1,0 +1,266 @@
+@font-face {
+  font-family: "NuevaStd";
+  src: url("../fonts/NuevaStd-Cond.otf");
+  }
+
+@font-face {
+  font-family: "BerlinSans";
+  src: url("../fonts/BRLNSR.ttf");
+}
+
+@font-face {
+  font-family: "MyriadPro";
+  src: url("../fonts/MYRIADPRO-REGULAR.OTF");
+}
+
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans";
+  margin: 0;
+  padding: 0;
+}
+
+.top-portion,
+.bottom-portion {
+  width: 50%;
+  margin: auto;
+  box-sizing: border-box;
+
+}
+
+.top-portion {
+  background-image: linear-gradient(rgba(255,255,255,1), rgba(239,239,239,1));
+  height: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex:1;
+}
+
+.bottom-portion {
+  height: calc(100% - 600px);
+  background-color: rgba(227,227,227,1);
+  padding: 100px;
+  overflow: auto;
+}
+
+.logo{
+  background-image: url(../media/logo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:150px;
+  height: 150px;
+  display: block;
+}
+
+.slogan {
+  font-family: "NuevaStd";
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.navigation-bar {
+  font-family: "MyriadPro";
+  font-weight: 600;
+  font-size: 22px;
+  margin-top: auto;
+}
+
+.navigation-bar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-bar li {
+  display: inline;
+}
+
+.navigation-bar li:not(:last-child):after {
+  margin-left: 5px;
+  margin-right: 5px;
+  content: ' |'
+}
+
+.navigation-bar a,
+.navigation-bar a:link, 
+.navigation-bar a:visited {
+  text-decoration: none;
+  color: rgba(0,0,0,1);
+}
+
+.navigation-bar a.selected {
+  border-bottom: 3px solid rgba(183,225,27,1);
+}
+
+.media-block {
+  background-image: url(../media/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+}
+
+
+/*home page*/
+.account-data-container {
+  float:left;
+  width: 50%;
+  min-width: 350px;
+}
+
+.account-data {
+  font-family: "BerlinSans";
+  display: flex;
+  font-size: 18px;
+  margin-top: 25px;
+  padding: 10px;
+  width:70%;
+  border-radius: 0px 25px 25px 0px;
+  background: rgba(157,212,13,1);
+}
+
+.account-data div {
+  display: flex;
+  flex-direction: column; 
+}
+
+.account-data-left {
+  
+}
+
+.account-data-right {
+  margin-left: auto;
+}
+
+.account-data .title {
+  color: rgba(255,255,255,1);
+}
+
+.account-data .content {
+  color: rgba(99, 99, 99, 1);
+}
+
+.account-data .balance {
+  color: rgba(255,255,255,1);
+  font-size: 30px;
+
+}
+
+.user-data-container {
+  float:left;
+  width: 50%;
+  min-width: 350px;
+
+}
+
+.user-data-container h4 {
+  margin-left: 15px;
+}
+
+.user-data-container form {
+  border: solid 1px rgb(133, 133, 133, 1);
+  padding: 15px;
+  font-family: "BerlinSans";
+  font-size: 18px;
+}
+
+
+.user-data-container form .form-row {
+  display: flex;
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: center;
+  margin-bottom: 7px;
+}
+
+.user-data-container form label {
+  display: inline-block;
+  width: 40%;
+}
+
+.user-data-container form input {
+  display: inline-block;
+  width: 60%;
+  border: none;
+}
+
+.user-data-container form .submit-button {
+  background: rgba(157,212,13,1);
+  color: rgba(255,255,255,1);
+  margin-left: 80%;
+  width: 20%;
+}
+
+.user-data-container form .submit-button:disabled {
+  background: rgba(133, 133, 133, 1);
+}
+/*end of home page*/
+
+/*overview page*/
+.transactions {
+  border: solid 1px rgb(133, 133, 133, 1);
+  font-family: "BerlinSans";
+  font-size: 18px;
+}
+
+.transaction {
+  display: flex;
+  flex-direction: row; 
+}
+
+.recipient-data{
+  width: 70%;
+  margin: 15px;
+}
+
+.recipient-amount{
+  margin: 15px;
+  width: 30%;
+  display: flex;
+}
+
+.recipient-name {
+  display: flex;
+  flex-direction: row; 
+}
+
+.transactions .lastname{
+  margin-left: 3px;
+}
+
+.bij,
+.af {
+  background: rgba(157,212,13,1);
+  color: rgba(255,255,255,1);
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bij {
+  background: rgba(157,212,13,1);
+}
+
+.af {
+  background: rgba(157,212,13,0.4);
+}
+
+.transactions .amount{
+  margin-left: auto;
+
+}
+/*end of overview page*/
+
+/*start of payment page*/
+
+
+/*end of payment page*/
+

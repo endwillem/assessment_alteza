@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Alteza - Wijzer in bankzaken</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="style/general-styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+
+    <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="node_modules/angular-route/angular-route.js"></script>
+  </head>
+
+  <body ng-app="myApp">
+
+    <div class="top-portion">
+      <div  class="logo" ng-click="navigateToPage('home')"></div>
+      <span class="slogan">Wijzer in bankzaken</span>
+  
+      <div ng-controller="NavCtrl" class="navigation-bar">
+        <ul>
+          <li><a href='' ng-click="navigateToPage('home')" ng-class="{selected: selectedPage === 'home'}">HOME</a></li>
+          <li><a href='' ng-click="navigateToPage('overview')" ng-class="{selected: selectedPage === 'overview'}">OVERZICHT</a></li>
+          <li><a href='' ng-click="navigateToPage('payment')" ng-class="{selected: selectedPage === 'payment'}">BETALEN</a></li>
+        </ul>
+      </div>
+  
+    </div>
+
+    <div class="media-block"></div>
+
+    <div class="bottom-portion">
+      <div ng-view></div>
+    </div>
+  </body>
+
+  <script type="text/javascript" src="scripts/myApp.js"></script>
+
+  <script type="text/javascript" src="directives/routing-service.js"></script>
+  <script type="text/javascript" src="directives/homepage-controller.js"></script>
+  <script type="text/javascript" src="directives/payment-page-controller.js"></script>
+  <script type="text/javascript" src="directives/overview-page-controller.js"></script>
+</html>

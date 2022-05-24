@@ -1,0 +1,48 @@
+<div class="page">
+
+    <div class="account-data-container">
+        <h4>REKENINGEN</h4>
+
+        <div class="account-data">
+            <div class="account-data-left">
+                <span class="title">Basisrekening</span>
+                <span class="content">{{account.accountNumber}}</span>
+            </div>
+            <div class="account-data-right">
+                <span class="balance">{{account.balance | currency:"€"}}</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="user-data-container">
+    
+        <h4>TRANSACTIES</h4>
+
+        <div class="transactions">
+            <div ng-repeat="transaction in transactions | orderBy:'-date'" class="transaction">
+
+                <div class="recipient-data">
+                    <div class="recipient-name">
+                        <span class="initials">{{transaction.to.initials}}.</span>
+                        <span class="lastname">{{transaction.to.lastname}}</span>
+                    </div>
+
+                    <span class="recipient-date">{{ transaction.date | date : "dd - MM - y" }}</span>
+
+                </div>
+
+                <div class="recipient-amount">
+                    <div class="bij" ng-if="transaction.to.accountNumber === account.accountNumber">
+                        BIJ
+                    </div>
+                    <div class="af" ng-if="transaction.to.accountNumber !== account.accountNumber">
+                         AF
+                    </div>
+                    <span class="amount">{{transaction.amount | currency:"€"}}</span>
+                </div>
+
+            </div>
+        </div>
+        
+  </div>
+</div>

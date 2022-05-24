@@ -1,0 +1,51 @@
+<div class="page">
+
+  <div class="account-data-container">
+    <h4>REKENING GEGEVENS</h4>
+
+    
+    <div class="account-data">
+      <div class="account-data-left">
+          <span class="title">Basisrekening</span>
+          <span class="content">{{account.accountNumber}}</span>
+      </div>
+      
+  </div>
+  </div>
+
+  <div class="user-data-container">
+    
+    <h4>EIGEN GEGEVENS</h4>
+
+    <form name="userDataForm" ng-submit="patchUserData(account);">
+      
+      <div class="form-row">
+        <label for="Voorletters">Voorletters</label>
+        <input type="text" id="Voorletters" name="Voorletters" ng-model="account.initials" required>
+      </div>   
+      <div class="form-row">
+        <label for="Achternaam">Achternaam</label>
+        <input type="text" id="Achternaam" name="Achternaam" ng-model="account.lastname" required>
+      </div>
+      <div class="form-row">
+        <label for="Email">Email</label>
+        <input type="text" id="Email" name="email" ng-model="account.email" type="email" required>
+      </div>
+      <div class="form-row">
+        <label for="Straat">Straat + nr</label>
+        <input type="text" id="Straat" name="Straat" ng-model="account.street" required>
+      </div>
+      <div class="form-row">
+        <label for="Plaats">Plaats</label>
+        <input type="text" id="Plaats" name="Plaats" ng-model="account.city" required>
+      </div>
+      <div class="form-row">
+        <label for="Telefoon">Telefoon</label>
+        <input type="text" id="Telefoon" name="Telefoon" ng-model="account.phone" required>
+      </div>
+
+      <input type="submit" value="Verstuur" ng-disabled="userDataForm.$invalid" class="submit-button">
+    </form>
+    
+  </div>
+</div>
